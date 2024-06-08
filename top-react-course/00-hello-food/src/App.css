@@ -1,0 +1,10 @@
+:root{
+  font-family: system-ui;
+  display: grid;
+  text-align: center;
+  place-content: center;
+
+  background-color: #222;
+  color: #fff;
+}
+
