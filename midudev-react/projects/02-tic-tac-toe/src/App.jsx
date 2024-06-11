@@ -1,36 +1,15 @@
-import './App.css'
 import { useState } from 'react'
 
-const TURNS = {
-  X: 'X',
-  O: 'O'
-}
+import './App.css'
+import { Square } from './Components/Square'
+import { TURNS, WINNER_COMB } from './constants'
+import { WinnerModal } from './Components/WinnerModal'
+import { Board } from './Components/Board'
 
-const board = Array(9).fill(null)
 
-const Square = ({ children, isSelected, updateBoard, index}) => {
-  const className = `square ${ isSelected ? 'is-selected' : ''}`
 
-  const handleClick = () => {
-    updateBoard(index)
-  }
-  return (
-    <div onClick={handleClick} className={className} >
-      {children}
-    </div>
-  )
-}
 
-const WINNER_COMB = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-  [0, 3, 6],
-  [1, 4, 7],
-  [2, 5, 8],
-  [0, 4, 8],
-  [2, 4, 6]
-]
+
 
 
 function App () {
@@ -60,6 +39,10 @@ function App () {
     setWinner(null)
   }
 
+  const checkEndGame = (newBoard) => {
+    return newBoard.every((square) => square !== null)
+  }
+
   const updateBoard = (index) => {
 
     if (board[index] || winner) return
@@ -75,30 +58,20 @@ function App () {
     
     if (newWinner) {
       setWinner(newWinner)
+    } else if (checkEndGame(newBoard)) {
+      setWinner(false)
     }
-
-
   }
 
   return (
     <main className="board">
+      
       <h1>Tic Tac Toe</h1>
       <button onClick={resetGame}> Reset Game </button>
       <section className="game">
-        {
-          board.map((_, index) => {
-            return (
-              <Square
-              key={index}
-              index={index}
-              updateBoard={updateBoard}
-              >
-                {board[index]}
-              </Square>
-            )
-          })
-        }
+        <Board board={board} updateBoard={updateBoard} />
       </section>
+
       <section className="turn">
         <Square isSelected={turn === TURNS.X} >
           {TURNS.X}</Square>
@@ -106,31 +79,7 @@ function App () {
         >{TURNS.O}</Square>
       </section>
 
-      {
-        winner !== null && (
-          <section className="winner">
-            <div className="text">
-              <h2>
-                {
-                  winner === false
-                  ? 'Emapate'
-                  : 'Ganó ' + winner
-                }
-              </h2>
-
-              <header className="win">
-                { winner && <Square>{winner}</Square>}
-              </header>
-
-              <footer>
-                <button onClick={resetGame}>
-                  Empezar de nuevo
-                </button>
-              </footer>
-            </div>
-          </section>
-        )
-      }
+      <WinnerModal resetGame={resetGame} winner={winner} />
 
     </main>
   )
