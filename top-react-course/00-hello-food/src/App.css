@@ -1,10 +1,7 @@
-:root{
-  font-family: system-ui;
+.fuck {
   display: grid;
-  text-align: center;
-  place-content: center;
+grid-template-columns: repeat(3, 1fr);
+background-color: rebeccapurple;
 
-  background-color: #222;
-  color: #fff;
 }
 

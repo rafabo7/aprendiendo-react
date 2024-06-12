@@ -1,0 +1,11 @@
+body {
+    font-family: system-ui;
+    display: grid;
+    text-align: center;
+    place-content: center;
+    grid-template-columns: 80%;
+  
+    background-color: #222;
+    color: #fff;
+
+  }

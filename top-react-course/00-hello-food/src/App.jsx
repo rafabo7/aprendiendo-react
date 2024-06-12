@@ -2,9 +2,11 @@ import './App.css'
 
 function App () {
   return (
-    <h1 className="title">
-      This is my very first React App
-    </h1>
+    <main className='fuck' >
+      <section>"Section 1"</section>
+      <section>"Section 2"</section>
+      <section>"Section 3"</section>
+    </main>
   )
 }
 
