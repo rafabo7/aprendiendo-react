@@ -1,34 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '../../../../../../../../vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react'
 
-function App () {
-  const [count, setCount] = useState(0)
+function App() {
+
+  const [enabled, setEnabled] = useState(false)
+  const [position, setPosition] = useState( { x: 0, y: 0})
+
+  useEffect(() => {
+
+    console.log('Is enabled: ' + enabled)
+
+    const handleMove = (event) => {
+      const { clientX, clientY } = event
+      setPosition( { x: clientX, y: clientY})
+
+    }
+    if (enabled) {
+      window.addEventListener('pointermove', handleMove)
+    }
+
+    return () => {
+      window.removeEventListener('pointermove', handleMove)
+    }
+  }, [enabled])
 
   return (
-    <>
-      <div>
-        <a href='https://vitejs.dev' target='_blank' rel='noreferrer'>
-          <img src={viteLogo} className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://react.dev' target='_blank' rel='noreferrer'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className='read-the-docs'>
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <main >
+      <div style={{
+        position: 'absolute',
+        backgroundColor: '#09f',
+        borderRadius: '50%',
+        opacity: '0.8',
+        pointerEvents: 'none',
+        left: -20,
+        top: -20,
+        width: 40,
+        height: 40,
+        transform: `translate(${position.x}px, ${position.y}px)`
+      }}/>
+
+      <button onClick={ ()=> setEnabled(!enabled) }
+      >{enabled ? 'Desactivar' : 'Activar'} seguir el puntero
+      </button>
+    </main >
+    
   )
 }
 
