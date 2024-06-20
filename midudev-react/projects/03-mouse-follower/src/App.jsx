@@ -47,9 +47,22 @@ function App() {
     }
   }, [enabled])
 
+  useEffect( () => {
+    document.body.classList.toggle('no-cursor', enabled)
+    const button = document.querySelector('button')
+    button.classList.toggle('no-cursor', enabled)
+    
+
+    return () => {
+      document.body.classList.remove('no-cursor')
+      button.classList.remove('no-cursor')
+
+}
+  }, [enabled])
+
   return (
     <main >
-      <div style={{
+      <div className={ enabled ? 'on' : 'off'} style={{
         position: 'absolute',
         backgroundColor: '#09f',
         borderRadius: '50%',
