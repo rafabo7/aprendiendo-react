@@ -45,7 +45,12 @@ function App() {
       // añadir el efecto si enabled es true
       window.removeEventListener('pointermove', handleMove)
     }
-  }, [enabled])
+  }, 
+    // A continuación se especifican las depencias a observar
+    // [] => cuando se monta el componente
+    // [enabled] => cuando se monta el componente o cambia el valor de enabled
+    // undefined (sin especificar) => cada vez que se renderiza el componete
+    [enabled])
 
   useEffect( () => {
     document.body.classList.toggle('no-cursor', enabled)
