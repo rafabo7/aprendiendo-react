@@ -58,6 +58,19 @@ function App() {
       button.classList.remove('no-cursor')
 
 }
+  })
+
+  useEffect( () => {
+    document.body.classList.toggle('no-cursor', enabled)
+    const button = document.querySelector('button')
+    button.classList.toggle('no-cursor', enabled)
+    
+
+    return () => {
+      document.body.classList.remove('no-cursor')
+      button.classList.remove('no-cursor')
+
+}
   }, [enabled])
 
   return (
