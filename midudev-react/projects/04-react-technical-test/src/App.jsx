@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import './App.css'
 
 export function App () {
     const [fact, setFact] = useState()
@@ -15,12 +16,15 @@ export function App () {
 
             setFact(fact)
 
-            const threeFirstWord = fact.split(' ', 3).join(' ')
-            
-            setImgUrl(`https://cataas.com/cat/says/${threeFirstWord}?fontSize=80&fontColor=white`)
-
         })
     }, [])
+
+    useEffect(() => {
+        if (!fact) return
+        const threeFirstWord = fact.split(' ', 3).join(' ')
+            
+        setImgUrl(`https://cataas.com/cat/says/${threeFirstWord}?fontColor=white`)
+    },[fact])
     
     return (
         <main>
