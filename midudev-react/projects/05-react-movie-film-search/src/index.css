@@ -365,8 +365,9 @@ input {
 }
 
 label {
-  display: block;
+  vertical-align: middle;
   margin-bottom: 4px;
+  display: inline-block;
 }
 
 input:not([type='checkbox']):not([type='radio']),
