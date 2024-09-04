@@ -1,0 +1,76 @@
+{
+    "Search": [
+      {
+        "Title": "Rush Hour",
+        "Year": "1998",
+        "imdbID": "tt0120812",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BYWM2NDZmYmYtNzlmZC00M2MyLWJmOGUtMjhiYmQ2OGU1YTE1L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Rush Hour 2",
+        "Year": "2001",
+        "imdbID": "tt0266915",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BODhlNGJjMWQtZGMyYS00MzJhLWJhZGMtY2NlNDI5Nzg5NTU2XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Rush Hour 3",
+        "Year": "2007",
+        "imdbID": "tt0293564",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMTA0Nzg5NjQ0MDBeQTJeQWpwZ15BbWU3MDE4Mzg5NDE@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Rush Hour",
+        "Year": "2016",
+        "imdbID": "tt4085584",
+        "Type": "series",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BNTViODJjYzQtMDIyYi00OWFkLWEyMTktNGJhYTY4ZGQzZmVkXkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_SX300.jpg"
+      },
+      {
+        "Title": "SimCity 4: Rush Hour",
+        "Year": "2003",
+        "imdbID": "tt0432602",
+        "Type": "game",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BZDdmN2M2ZTYtOTkwYi00ODA2LWFkZTUtM2QxMzYxYjFhMjgyXkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Rush Hour",
+        "Year": "2018",
+        "imdbID": "tt7620218",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMGMzYWNlNDUtNmM5OS00YWQxLTgwYTItYWNhNDgzZDg1Y2JhXkEyXkFqcGdeQXVyMjQ2MTcxMTg@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Rush Hour 4: Face/Off 2",
+        "Year": "2015",
+        "imdbID": "tt4742790",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BZjUyZTQxYzYtNzk3Ni00N2MzLTg3OTgtZjZmYzczY2UwODBmXkEyXkFqcGdeQXVyNTM3MDMyMDQ@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Rush Hour",
+        "Year": "2007–",
+        "imdbID": "tt0989492",
+        "Type": "series",
+        "Poster": "N/A"
+      },
+      {
+        "Title": "The Rush Hour",
+        "Year": "1927",
+        "imdbID": "tt0019339",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BM2ZkZWY2ZTktY2ZkOS00NTkzLWFkYTktNDE3MDdjMmRlYTM2XkEyXkFqcGdeQXVyMjUxODE0MDY@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Rush Hour",
+        "Year": "1941",
+        "imdbID": "tt0467673",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMmMzZDNlYzctMDI2NC00N2ZjLThlZGQtMGYxZTBjNWRhMDVjXkEyXkFqcGdeQXVyNDMwMDU5Ng@@._V1_SX300.jpg"
+      }
+    ],
+    "totalResults": "39",
+    "Response": "True"
+  }
