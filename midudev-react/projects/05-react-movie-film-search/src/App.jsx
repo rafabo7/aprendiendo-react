@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import './App.css'
 import { Movies } from './Components/Movies'
-import responseMovies from './mocks/results-api.json'
-import noResponseMovies from './mocks/no-results-api.json'
+import { useMovies } from './hooks/useMovies'
 
 
-function App() {
 
-  const movies = responseMovies.Search
+
+function App() {  
+
+  const {movies} = useMovies()
 
   return (
     <div className='App'>
