@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import { Movies } from './Components/Movies'
 import responseMovies from './mocks/results-api.json'
 import noResponseMovies from './mocks/no-results-api.json'
 
@@ -7,7 +8,6 @@ import noResponseMovies from './mocks/no-results-api.json'
 function App() {
 
   const movies = responseMovies.Search
-  const hasMovies = movies?.length > 0
 
   return (
     <div className='App'>
@@ -20,24 +20,7 @@ function App() {
     </header>
     <main>
 
-      {
-        hasMovies
-          ?   (
-            <ul>
-              {
-              movies.map( movie => (
-                <li key={movie.imdbID}>
-                  <h3>{movie.Title}</h3>
-                  <p>{movie.Year}</p>
-                  <img src={movie.Poster} alt={movie.Title} />
-                </li>
-              ))
-              }
-            </ul>
-          ) : (
-            <p>Los resultados se mostrarán aquí</p>
-          )
-      }
+      <Movies movies={movies} />
 
     </main>
     </div>
