@@ -3,7 +3,7 @@
 export function MoviesList ( { movies } ) {
 
     return (
-        <ul>
+        <ul className="movies-grid">
               {
               movies.map( movie => (
                 <li key={movie.id}>
