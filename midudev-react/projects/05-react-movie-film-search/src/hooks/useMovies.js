@@ -6,13 +6,24 @@ import { searcMovies } from '../services/searchMovies'
 export function useMovies ( { search } ) {
 
   const [movies, setMovies] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [err, setError] = useState(null)
 
 
 
     const getMovies = async () => {
-      const newMovies = await searcMovies({search})
-      setMovies(newMovies)
+
+      try {
+        setLoading(true)
+        const newMovies = await searcMovies({search})
+        setMovies(newMovies)
+      } catch (e) {
+        setError(e.message)
+      } finally {
+        setLoading(false)
+      }
+
     }
   
-    return ({movies, getMovies})
+    return ({movies, getMovies, err, loading})
   }

@@ -12,7 +12,7 @@ function App() {
   
   const [search, setSearch] = useState('')
   const [error, setError] = useState(null)
-  const {movies, getMovies} = useMovies( {search} )
+  const {movies, getMovies, err, loading} = useMovies( {search} )
 
   const handleSearch = (e) => {
     const newSearch = e.target.value
@@ -51,6 +51,7 @@ function App() {
       </form>
     </header>
     <main>
+      { loading && <p>Loading...</p> }
       { error && <p style={{color: "red"}} >{error}</p>}
 
       <Movies movies={movies} />
