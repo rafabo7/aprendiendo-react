@@ -12,7 +12,7 @@ export const searcMovies = async ({search}) => {
         return movies?.map( movie => (
             {
               title: movie.Title,
-              year: movie.year,
+              year: movie.Year,
               id: movie.imdbID,
               poster: movie.Poster
             }
