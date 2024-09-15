@@ -11,7 +11,9 @@ function App() {
   
   const [search, setSearch] = useState('')
   const [error, setError] = useState(null)
-  const {movies, getMovies, err, loading} = useMovies( {search} )
+  const [sort, setSort] = useState(false)
+  const {movies, getMovies, err, loading} = useMovies( {search, sort} )
+
 
   const handleSearch = (e) => {
     const newSearch = e.target.value
@@ -40,6 +42,10 @@ function App() {
 
   }
 
+  const handleSort = () => {
+    setSort(!sort)
+  }
+
   return (
     <div className='App'>
     <header>
@@ -47,6 +53,9 @@ function App() {
       <form onSubmit={handleSubmit} action="#" className="form">
         <input onChange={handleSearch} value={search} placeholder='Star Wars, Avengers, Frank...' />
         <button type="submit">Buscar</button>
+        <label htmlFor="sort">
+          <input type="checkbox" name="sort" id="sort" onChange={handleSort} defaultValue={sort} />
+        </label>
       </form>
     </header>
     <main>

@@ -1,9 +1,9 @@
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useMemo } from 'react'
 import { searcMovies } from '../services/searchMovies'
 
 
-export function useMovies ( { search } ) {
+export function useMovies ( { search, sort } ) {
 
   const [movies, setMovies] = useState([])
   const [loading, setLoading] = useState(false)
@@ -13,6 +13,7 @@ export function useMovies ( { search } ) {
 
 
     const getMovies = async () => {
+
 
       if (search === previousSearch.current) return
 
@@ -28,6 +29,15 @@ export function useMovies ( { search } ) {
       }
 
     }
-  
-    return ({movies, getMovies, err, loading})
+
+
+  const sortedMovies = useMemo( () => {
+    console.log("useMemo rendering")
+    return sort
+        ? [...movies].sort((a,b) => a.title.localeCompare(b.title))
+        : movies
+
+  }, [sort, movies])
+
+  return ({movies: sortedMovies, getMovies, err, loading})
   }
