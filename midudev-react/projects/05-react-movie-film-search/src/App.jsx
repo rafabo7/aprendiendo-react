@@ -38,7 +38,7 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    getMovies(search)
+    getMovies({search})
 
   }
 
