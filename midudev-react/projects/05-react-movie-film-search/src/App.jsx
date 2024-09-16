@@ -21,6 +21,7 @@ function App() {
     if (newSearch.startsWith(" ")) return
 
     setSearch(newSearch)
+    getMovies({search: newSearch})
 
     if (newSearch === "") {
       setError("La búsqueda está vacía")
