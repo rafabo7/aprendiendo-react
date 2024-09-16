@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import './App.css'
 import { Movies } from './Components/Movies'
 import { useMovies } from './hooks/useMovies'
+import { debounce } from './services/debounce'
 
 
 
@@ -14,6 +15,10 @@ function App() {
   const [sort, setSort] = useState(false)
   const {movies, getMovies, err, loading} = useMovies( {search, sort} )
 
+  const debouncedGetMovies = useCallback(debounce( search => {
+    getMovies({ search })
+  }, 300), [])
+
 
   const handleSearch = (e) => {
     const newSearch = e.target.value
@@ -21,7 +26,7 @@ function App() {
     if (newSearch.startsWith(" ")) return
 
     setSearch(newSearch)
-    getMovies({search: newSearch})
+    debouncedGetMovies(newSearch)
 
     if (newSearch === "") {
       setError("La búsqueda está vacía")
